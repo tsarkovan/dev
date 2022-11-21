@@ -1,0 +1,8 @@
+# Collect stats from guest
+SHELL=/bin/bash
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+HOME=/tmp
+LANG=C
+DF="df --local --exclude-type tmpfs --total"
+*/5 * * * * root $DF > /var/tmp/guest-stat-df    2>/dev/null
+*/5 * * * * root $DF -i  > /var/tmp/guest-stat-df-i  2>/dev/null

@@ -1,0 +1,20 @@
+
+auto lo
+iface lo inet loopback
+
+# The primary network interface
+auto eth0
+allow-hotplug eth0
+iface eth0 inet static
+     netmask 255.255.255.0
+     address 31.172.66.117
+     gateway 31.172.66.1
+     dns-nameservers 31.172.64.74 31.172.67.75
+
+
+auto eth0:0
+allow-hotplug eth0:0
+iface eth0:0 inet6 static
+     netmask 48
+     address 2a01:ba80:e:17:23d::1
+     gateway 2a01:ba80:e:17::1
